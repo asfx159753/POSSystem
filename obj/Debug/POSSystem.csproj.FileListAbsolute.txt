@@ -1,0 +1,14 @@
+C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\POSSystem.csproj.AssemblyReference.cache
+C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\MainWindow.g.cs
+C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\App.g.cs
+C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\POSSystem_MarkupCompile.cache
+C:\Users\Mikl\OneDrive\Desktop\POSSystem\bin\Debug\POSSystem.exe.config
+C:\Users\Mikl\OneDrive\Desktop\POSSystem\bin\Debug\POSSystem.exe
+C:\Users\Mikl\OneDrive\Desktop\POSSystem\bin\Debug\POSSystem.pdb
+C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\MainWindow.baml
+C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\POSSystem.g.resources
+C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\POSSystem.Properties.Resources.resources
+C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\POSSystem.csproj.GenerateResource.cache
+C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\POSSystem.csproj.CoreCompileInputs.cache
+C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\POSSystem.exe
+C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\POSSystem.pdb
