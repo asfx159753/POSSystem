@@ -12,3 +12,6 @@ C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\POSSystem.csproj.GenerateReso
 C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\POSSystem.csproj.CoreCompileInputs.cache
 C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\POSSystem.exe
 C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\POSSystem.pdb
+C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\LoginWindow.g.cs
+C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\POSSystem_MarkupCompile.lref
+C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\LoginWindow.baml

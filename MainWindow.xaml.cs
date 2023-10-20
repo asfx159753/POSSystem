@@ -31,12 +31,21 @@ namespace POSSystem
             string password = loginPassWord.Text;
             if (LoginSevice.LoginCheck(account, password))
             {
+                // 登入成功
+                // 關閉MainWindow
+                this.Hide();
+
+                // 打開新的LoginWindow
+                LoginWindow loginWindow = new LoginWindow();
+                loginWindow.Show();
 
             }
             else {
+                //登入失敗
                 MessageBox.Show("登入失敗。請檢查您的帳號和密碼。", "登入錯誤", MessageBoxButton.OK, MessageBoxImage.Error);
             };
         }
 
+       
     }
 }

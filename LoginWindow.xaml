@@ -1,0 +1,20 @@
+﻿<Window x:Class="POSSystem.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:POSSystem"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="400" Width="300" UseLayoutRounding="True" RenderOptions.BitmapScalingMode="HighQuality">
+    <Grid RenderTransformOrigin="0.659,0.499" Margin="5,5,5,5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Column="0" Content="入庫" Click="Sale_Click" Margin="0,188,0,0" FontSize="24" FontFamily="Arial Black"/>
+        <Button Grid.Column="0" Content="銷售" Click="InWarehouse_Click" Margin="0,0,0,193" FontSize="24" FontFamily="Arial Black" Grid.ColumnSpan="2"/>
+        <Button Grid.Column="1" Content="分析"  Click="Analysis_Click" Margin="5,188,0,80" FontSize="24" FontFamily="Arial Black"/>
+        <Button Grid.Column="1" Content="登出"  Click="Logout_Click" Margin="5,300,0,0" FontFamily="Arial Black"/>
+    </Grid>
+</Window>

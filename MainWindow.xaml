@@ -1,7 +1,7 @@
 ﻿<Window x:Class="POSSystem.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Login" Height="300" Width="400">
+        Title="Login" Height="600" Width="400" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -11,15 +11,15 @@
         </Grid.RowDefinitions>
 
         <!-- 第一列：帳號和密碼的Label和TextBox -->
-        <StackPanel Grid.Row="0" Margin="10">
-            <Label Content="帳號" HorizontalAlignment="Center"/>
-            <TextBox x:Name="loginAccount" Width="200" Margin="5" />
-            <Label Content="密碼" HorizontalAlignment="Center"/>
-            <TextBox x:Name="loginPassWord" Width="200" Margin="5"/>
+        <StackPanel Grid.Row="1" Margin="10,162,10,-40" >
+            <Label Content="帳號(Account)" HorizontalAlignment="Center" FontFamily="Arial Black"/>
+            <TextBox x:Name="loginAccount" Width="200" Margin="5"  BorderThickness="2" />
+            <Label Content="密碼(Password)" HorizontalAlignment="Center" FontFamily="Arial Black"/>
+            <TextBox x:Name="loginPassWord" Width="200" Margin="5" BorderThickness="2"/>
         </StackPanel>
 
         <!-- 第二列：登入按鈕 -->
-        <Button Grid.Row="1" Content="登入" Width="100" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Click="LoginButton_Click"/>
-        
+        <Button Grid.Row="1" Content="Login" Width="100" Margin="0,305,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="LoginButton_Click"/>
+
     </Grid>
 </Window>

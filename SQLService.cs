@@ -10,6 +10,13 @@ namespace POSSystem
 {
     public class SQLService
     {
+
+        /// <summary>
+        /// 登入帳號檢查
+        /// </summary>
+        /// <param name="account"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public static bool LoginCheck(string account, string password) 
         {
             string connectionString = ConfigurationManager.ConnectionStrings["POSConnect"].ConnectionString;
