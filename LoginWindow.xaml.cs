@@ -19,6 +19,7 @@ namespace POSSystem
     /// </summary>
     public partial class LoginWindow : Window
     {
+        private bool isRegisterWindowOpen = false;
         public LoginWindow()
         {
             InitializeComponent();
@@ -47,6 +48,31 @@ namespace POSSystem
             // 顯示MainWindow
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
+        }
+        private void CustomerRegister_Click(object sender, RoutedEventArgs e)
+        {
+
+            // 顯示RegisterWindow
+            EmployeeRegisterWindow employeeRegisterWindow = new EmployeeRegisterWindow();
+            employeeRegisterWindow.Show();
+        }
+        private void SupplyerRegisterAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+            // 顯示RegisterWindow
+            EmployeeRegisterWindow employeeRegisterWindow = new EmployeeRegisterWindow();
+            employeeRegisterWindow.Show();
+        }
+        private void EmployeeRegisterAdd_Click(object sender, RoutedEventArgs e)
+        {
+            if (!isRegisterWindowOpen)
+            {
+                // 顯示RegisterWindow
+                EmployeeRegisterWindow employeeRegisterWindow = new EmployeeRegisterWindow();
+                employeeRegisterWindow.Closed += (s, args) => isRegisterWindowOpen = false;
+                employeeRegisterWindow.Show();
+                isRegisterWindowOpen = true;
+            }
         }
     }
 }

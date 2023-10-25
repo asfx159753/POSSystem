@@ -15,3 +15,5 @@ C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\POSSystem.pdb
 C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\LoginWindow.g.cs
 C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\POSSystem_MarkupCompile.lref
 C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\LoginWindow.baml
+C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\EmployeeRegisterWindow.g.cs
+C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\EmployeeRegisterWindow.baml

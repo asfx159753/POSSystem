@@ -5,16 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POSSystem"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="400" Width="300" UseLayoutRounding="True" RenderOptions.BitmapScalingMode="HighQuality">
-    <Grid RenderTransformOrigin="0.659,0.499" Margin="5,5,5,5">
+        Title="LoginWindow" Height="600" Width="600" ResizeMode="NoResize" UseLayoutRounding="True" RenderOptions.BitmapScalingMode="HighQuality">
+    <Grid RenderTransformOrigin="0.659,0.499" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Button Grid.Column="0" Content="入庫" Click="Sale_Click" Margin="0,188,0,0" FontSize="24" FontFamily="Arial Black"/>
-        <Button Grid.Column="0" Content="銷售" Click="InWarehouse_Click" Margin="0,0,0,193" FontSize="24" FontFamily="Arial Black" Grid.ColumnSpan="2"/>
-        <Button Grid.Column="1" Content="分析"  Click="Analysis_Click" Margin="5,188,0,80" FontSize="24" FontFamily="Arial Black"/>
-        <Button Grid.Column="1" Content="登出"  Click="Logout_Click" Margin="5,300,0,0" FontFamily="Arial Black"/>
+        <Button Grid.Column="0" Content="入庫" Click="Sale_Click" Margin="10,250,5,10" FontSize="24" FontFamily="Arial Black"/>
+        <Button Grid.Column="0" Content="門市銷售" Click="InWarehouse_Click" Margin="10,18,10,317" FontSize="24" FontFamily="Arial Black" Grid.ColumnSpan="2"/>
+        <Button Grid.Column="1" Content="報表分析"  Click="Analysis_Click" Margin="4,250,11,227" FontSize="24" FontFamily="Arial Black"/>
+        <Button Grid.Column="1" Content="登出"  Click="Logout_Click" Margin="5,510,10,10" FontFamily="Arial Black"/>
+        <Button Grid.Column="1" Content="會員註冊"  Click="CustomerRegister_Click" Margin="5,340,205,60" FontSize="18" FontFamily="Arial Black"/>
+        <Button Grid.Column="1" Content="廠商註冊"  Click="SupplyerRegisterAdd_Click" Margin="100,340,107,60" FontSize="18" FontFamily="Arial Black"/>
+        <Button Grid.Column="1" Content="員工註冊"  Click="EmployeeRegisterAdd_Click" Margin="198,340,10,60" FontSize="18" FontFamily="Arial Black"/>
     </Grid>
 </Window>
