@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Mikl\OneDrive\Desktop\POSSystem\obj\Debug\
+C:\Users\airsk\OneDrive\Desktop\ProgramDev\POSSystem\obj\Debug\
 POSSystem
 none
 false
 DEBUG;TRACE
-C:\Users\Mikl\OneDrive\Desktop\POSSystem\App.xaml
-31221373415
+C:\Users\airsk\OneDrive\Desktop\ProgramDev\POSSystem\App.xaml
+5-398668868
 
-102026404963
+141942021567
 14-1486485296
-EmployeeRegisterWindow.xaml;LoginWindow.xaml;MainWindow.xaml;
+DataTemplates.xaml;EmployeeRegisterWindow.xaml;LoginWindow.xaml;MainWindow.xaml;Styles.xaml;
 
-True
+False
 

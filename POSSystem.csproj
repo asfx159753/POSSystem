@@ -59,10 +59,18 @@
     <Compile Include="EmployeeRegisterWindow.xaml.cs">
       <DependentUpon>EmployeeRegisterWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helper\Converter.cs" />
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="SQLService.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\RelayCommand.cs" />
+    <Page Include="DataTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="EmployeeRegisterWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -84,6 +92,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -110,6 +122,32 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assets\analytics_icon.png" />
+    <Resource Include="Assets\calendar_icon.png" />
+    <Resource Include="Assets\categories_icon.png" />
+    <Resource Include="Assets\close_menu_def.png" />
+    <Resource Include="Assets\close_menu_mo.png" />
+    <Resource Include="Assets\dashboard_icon.png" />
+    <Resource Include="Assets\delivery_icon.png" />
+    <Resource Include="Assets\Devices_Image.png" />
+    <Resource Include="Assets\discount_icon.png" />
+    <Resource Include="Assets\hamburger_icon.png" />
+    <Resource Include="Assets\hamburger_mo.png" />
+    <Resource Include="Assets\line_chart.png" />
+    <Resource Include="Assets\max_def.png" />
+    <Resource Include="Assets\max_mo.png" />
+    <Resource Include="Assets\order32.png" />
+    <Resource Include="Assets\product_icon.png" />
+    <Resource Include="Assets\reports_icon.png" />
+    <Resource Include="Assets\sales_icon.png" />
+    <Resource Include="Assets\shutdown_def.png" />
+    <Resource Include="Assets\shutdown_mo.png" />
+    <Resource Include="Assets\stats_icon.png" />
+    <Resource Include="Assets\stocks_icon.png" />
+    <Resource Include="Assets\user_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
