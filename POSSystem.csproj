@@ -63,6 +63,7 @@
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MainViewModel.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SQLService.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />

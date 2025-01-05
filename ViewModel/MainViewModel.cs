@@ -1,4 +1,4 @@
-ï»¿/// <Summary>
+/// <Summary>
 /// Author : R. Arun Mutharasu
 /// Created :25-01-2022
 /// YouTube Channel : C# Design Pro 
@@ -7,6 +7,7 @@
 using System.ComponentModel;
 using System.Windows.Input;
 using System.Windows;
+using System;
 
 namespace POSSystem.ViewModel
 {
@@ -21,52 +22,26 @@ namespace POSSystem.ViewModel
         // Close App
         public void CloseApp(object obj)
         {
-            MainWindow win = obj as MainWindow;
-            win.Close();
-        }
+            // ±N obj ¸ê®Æ¿é¥X¨ì±±¨î¥x
+            Console.WriteLine($"Object type: {obj?.GetType()}");
+            Console.WriteLine($"Object content: {obj?.ToString()}");
 
-
-        // Close App Command
-        private ICommand _closeCommand;
-
-        public ICommand CloseAppCommand
-        {
-            get
+            if (obj is MainWindow win)
             {
-                if (_closeCommand == null)
-                {
-                    _closeCommand = new RelayCommand(p => CloseApp(p));
-                }
-                return _closeCommand;
+                win.Close();
             }
         }
 
         // Maximize App
         public void MaxApp(object obj)
         {
-            MainWindow win = obj as MainWindow;
+            // ±N obj ¸ê®Æ¿é¥X¨ì±±¨î¥x
+            Console.WriteLine($"Object type: {obj?.GetType()}");
+            Console.WriteLine($"Object content: {obj?.ToString()}");
 
-            if (win.WindowState == WindowState.Normal)
+            if (obj is MainWindow win)
             {
-                win.WindowState = WindowState.Maximized;
-            }
-            else if (win.WindowState == WindowState.Maximized)
-            {
-                win.WindowState = WindowState.Normal;
-            }
-        }
-
-        // Maximize App Command
-        private ICommand _maxCommand;
-        public ICommand MaxAppCommand
-        {
-            get
-            {
-                if (_maxCommand == null)
-                {
-                    _maxCommand = new RelayCommand(p => MaxApp(p));
-                }
-                return _maxCommand;
+                win.WindowState = win.WindowState == WindowState.Normal ? WindowState.Maximized : WindowState.Normal;
             }
         }
 
@@ -74,12 +49,12 @@ namespace POSSystem.ViewModel
         {
             // Set SideMenu Visibility 
             IsPanelVisible = false;
-        }
 
-        // Close Menu
-        public void CloseMenu()
-        {
-            IsPanelVisible = false;
+            // Initialize commands
+            _closeCommand = new RelayCommand(p => CloseApp(p));
+            _maxCommand = new RelayCommand(p => MaxApp(p));
+            _showMenuCommand = new RelayCommand(p => ShowMenu());
+            _closeMenuCommand = new RelayCommand(p => CloseMenu());
         }
 
         // Show Menu
@@ -88,48 +63,33 @@ namespace POSSystem.ViewModel
             IsPanelVisible = true;
         }
 
-        // Show Menu Command
-        private ICommand _showMenuCommand;
-
-        public ICommand ShowMenuCommand
+        // Close Menu
+        public void CloseMenu()
         {
-            get
-            {
-                if (_showMenuCommand == null)
-                {
-                    _showMenuCommand = new RelayCommand(p => ShowMenu());
-                }
-                return _showMenuCommand;
-            }
+            IsPanelVisible = false;
         }
 
+        // Commands
+        private readonly ICommand _closeCommand;
+        public ICommand CloseAppCommand => _closeCommand;
 
-        // Close Menu Command
-        private ICommand _closeMenuCommand;
+        private readonly ICommand _maxCommand;
+        public ICommand MaxAppCommand => _maxCommand;
 
-        public ICommand CloseMenuCommand
-        {
-            get
-            {
-                if (_closeMenuCommand == null)
-                {
-                    _closeMenuCommand = new RelayCommand(p => CloseMenu());
-                }
-                return _closeMenuCommand;
-            }
-        }
+        private readonly ICommand _showMenuCommand;
+        public ICommand ShowMenuCommand => _showMenuCommand;
+
+        private readonly ICommand _closeMenuCommand;
+        public ICommand CloseMenuCommand => _closeMenuCommand;
 
         private bool _isPanelVisible;
         public bool IsPanelVisible
         {
-            get
-            {
-                return _isPanelVisible;
-            }
+            get => _isPanelVisible;
             set
             {
                 _isPanelVisible = value;
-                OnPropertyChanged("IsPanelVisible");
+                OnPropertyChanged(nameof(IsPanelVisible));
             }
         }
     }

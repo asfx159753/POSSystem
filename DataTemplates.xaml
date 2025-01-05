@@ -10,43 +10,31 @@
     <!--// Desktop //-->
     
     <DataTemplate x:Key="Desktop_Layout">
-
         <Grid x:Name="BaseGrid"
               Background="#282D33"
               Margin="8">
-
             <Grid.ColumnDefinitions>
-
                 <ColumnDefinition x:Name="SideMenuColumn"
                                   Width="0.22*"
                                   MaxWidth="240" />
-
                 <ColumnDefinition x:Name="col2"
                                   Width="1*" />
-
             </Grid.ColumnDefinitions>
-
             <Grid.RowDefinitions>
-
                 <RowDefinition x:Name="row1"
                                Height="0.1*"
                                MinHeight="60"
                                MaxHeight="68" />
-
                 <RowDefinition x:Name="row2"
                                Height="0.8*" />
-
                 <RowDefinition x:Name="row3"
                                Height="0.02*" />
-
             </Grid.RowDefinitions>
-
             <Button Grid.Row="0"
                     Grid.Column="1"
                     Command="{Binding MaxAppCommand}"
-                    CommandParameter="{Binding ElementName=ResponsiveWindow}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
                     Style="{StaticResource MaxAppStyle}" />
-
             <Grid Grid.Row="0"
                   Grid.Column="1"
                   Height="30"
@@ -54,7 +42,6 @@
                   VerticalAlignment="Top"
                   HorizontalAlignment="Left"
                   Margin="20,20,0,0">
-
                 <Border Height="30"
                         Width="230"
                         Background="#373E46"
@@ -63,46 +50,34 @@
                         BorderThickness="5,0,5,0"
                         BorderBrush="#FFDD00"
                         CornerRadius="5">
-
                     <Grid>
-
                         <TextBlock Text="C #   D E S I G N   P R O"
                                    FontFamily="Fonts/#Saira Regular"
                                    FontSize="18"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    Foreground="#DCE0E4" />
-
                         <TextBlock Text="D E S I G N   T H E   I N T E R F A C E"
                                    FontFamily="Fonts/#Saira SemiBold"
                                    FontSize="10"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    Foreground="Transparent" />
-
                     </Grid>
-
                 </Border>
-
             </Grid>
-
-
             <ContentControl Grid.Row="0"
                             Grid.RowSpan="3"
                             Grid.Column="0"
                             Template="{StaticResource SideMenuTemplate}" />
-
             <ScrollViewer Grid.Row="1"
                           Grid.Column="1"
                           VerticalScrollBarVisibility="Auto">
-
                 <Grid x:Name="Card_Grid"
                       Background="Transparent"
                       VerticalAlignment="Top"
                       Margin="10,0,10,0">
-
                     <Grid.ColumnDefinitions>
-
                         <ColumnDefinition x:Name="c0"
                                           Width="1*" />
                         <ColumnDefinition x:Name="c1"
@@ -111,11 +86,8 @@
                                           Width="1*" />
                         <ColumnDefinition x:Name="c3"
                                           Width="1*" />
-
                     </Grid.ColumnDefinitions>
-
                     <Grid.RowDefinitions>
-
                         <RowDefinition x:Name="CG_R1"
                                        Height="130" />
                         <RowDefinition x:Name="CG_R2"
@@ -124,61 +96,33 @@
                                        Height="462" />
                         <RowDefinition x:Name="CG_R4"
                                        Height="315" />
-
-
                     </Grid.RowDefinitions>
-
-                    <!--// Card - 1 //-->
-
-
                     <ContentControl Grid.Row="0"
                                     Grid.Column="0"
                                     Template="{StaticResource Card_1_Desktop}" />
-
-                    <!--// Card - 2 //-->
-
                     <ContentControl Grid.Row="0"
                                     Grid.Column="1"
                                     Template="{StaticResource Card_2_Desktop}" />
-
-                    <!--// Card - 3 //-->
-
                     <ContentControl Grid.Row="0"
                                     Grid.Column="2"
                                     Template="{StaticResource Card_3_Desktop}" />
-
-                    <!--// Card - 4 //-->
-
                     <ContentControl Grid.Row="0"
                                     Grid.Column="3"
                                     Template="{StaticResource Card_4_Desktop}" />
-
-                    <!--// Card - 5 //-->
-
                     <ContentControl Grid.Row="2"
                                     Grid.Column="0"
                                     Grid.ColumnSpan="4"
                                     Template="{StaticResource Card_5_Desktop}" />
-
-                    <!--// Card - 6 //-->
-
                     <ContentControl Grid.Row="3"
                                     Grid.Column="0"
                                     Template="{StaticResource Card_6_Desktop}" />
-
-                    <!--// Card - 7 //-->
-
                     <ContentControl Grid.Row="3"
                                     Grid.Column="1"
                                     Grid.ColumnSpan="3"
                                     Template="{StaticResource Card_7_Desktop}" />
-
                 </Grid>
-
             </ScrollViewer>
-
         </Grid>
-
     </DataTemplate>
     
     <!--// Laptop //-->
@@ -218,7 +162,7 @@
             <Button Grid.Row="0"
                     Grid.Column="1"
                     Command="{Binding MaxAppCommand}"
-                    CommandParameter="{Binding ElementName=ResponsiveWindow}"
+                    CommandParameter="{Binding ElementName=ResponsViewWindow}"
                     Style="{StaticResource MaxAppStyle}" />
 
             <Grid Grid.Row="0"
