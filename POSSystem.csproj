@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EmployeeList.xaml.cs">
+      <DependentUpon>EmployeeList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeRegisterWindow.xaml.cs">
       <DependentUpon>EmployeeRegisterWindow.xaml</DependentUpon>
     </Compile>
@@ -71,6 +74,10 @@
     <Page Include="DataTemplates.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EmployeeList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EmployeeRegisterWindow.xaml">
       <SubType>Designer</SubType>
@@ -124,7 +131,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assets\employee.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\analytics_icon.png" />
     <Resource Include="Assets\calendar_icon.png" />

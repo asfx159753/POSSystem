@@ -1478,13 +1478,68 @@
 
     </Style>
 
+    <Style x:Key="MenuButton6Style"
+       TargetType="Button">
+
+        <Setter Property="Template">
+
+            <Setter.Value>
+
+                <ControlTemplate TargetType="Button">
+
+                    <Grid>
+                        <Border x:Name="border"
+                            Background="#373E46"
+                            Height="50"
+                            VerticalAlignment="Top">
+                            <ContentPresenter />
+                        </Border>
+
+                        <Image Source="Assets/employee.png"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Margin="20,0,0,0"
+                           Stretch="None" />
+
+                        <TextBlock Foreground="#E9EBED"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Left"
+                               FontSize="18"
+                               Text="Employee"
+                               FontFamily="Fonts/#Open Sans Regular"
+                               Margin="70,0,0,0" />
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+
+                        <Trigger Property="IsMouseOver"
+                             Value="True">
+                            <Setter Property="Background"
+                                TargetName="border"
+                                Value="#292F34" />
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                             Value="True">
+                            <Setter Property="Background"
+                                TargetName="border"
+                                Value="#292F34" />
+
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Command" Value="{Binding OpenEmployeeListCommand}" />
+    </Style>
+
     <Style x:Key="MenuStackPanelStyle"
            TargetType="StackPanel">
 
         <Setter Property="Orientation"
                 Value="Vertical" />
         <Setter Property="Height"
-                Value="250" />
+                Value="300" />
         <Setter Property="Background"
                 Value="#2E333A" />
         <Setter Property="VerticalAlignment"
@@ -1510,10 +1565,11 @@
                     <Button Style="{StaticResource MenuButton3Style}" />
                     <Button Style="{StaticResource MenuButton4Style}" />
                     <Button Style="{StaticResource MenuButton5Style}" />
+                    <Button Style="{StaticResource MenuButton6Style}" />
 
                 </StackPanel>
 
-                <TextBlock Text="D E S I G N   T H E   I N T E R F A C E"
+                <TextBlock Text="M I K L   D E S I G N"
                            FontFamily="Fonts/#Saira SemiBold"
                            FontSize="10"
                            VerticalAlignment="Bottom"
@@ -1669,6 +1725,7 @@
                     <Button Style="{StaticResource MenuButton3Style}" />
                     <Button Style="{StaticResource MenuButton4Style}" />
                     <Button Style="{StaticResource MenuButton5Style}" />
+                    <Button Style="{StaticResource MenuButton6Style}" />
 
                 </StackPanel>
 

@@ -5,35 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POSSystem"
         mc:Ignorable="d"
-        Title="EmployeeRegisterWindow" Height="450" Width="800">
+        Title="EmployeeRegisterWindow" 
+        Height="450" 
+        Width="800"
+        WindowStyle="ToolWindow"
+        AllowsTransparency="False"
+        Background="Transparent">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Margin="115,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217" Height="31" FontSize="18" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Margin="115,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217" Height="31" FontSize="18" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Margin="115,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217" Height="31" FontSize="18" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Margin="115,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="626" Height="31" FontSize="18" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Margin="115,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="626" Height="31" FontSize="18" VerticalContentAlignment="Center"/>
-        <Label Content="姓名" HorizontalAlignment="Left" Margin="70,63,0,0" VerticalAlignment="Top"/>
-        <Label Content="帳號" HorizontalAlignment="Left" Margin="70,119,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.611,-0.392"/>
-        <Label Content="密碼" HorizontalAlignment="Left" Margin="70,174,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.611,-0.392"/>
-        <Label Content="信箱" HorizontalAlignment="Left" Margin="70,231,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.611,-0.392"/>
-        <Label Content="地址" HorizontalAlignment="Left" Margin="70,288,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.611,-0.392"/>
-        <Label Content="性別" HorizontalAlignment="Left" Margin="473,66,0,0" VerticalAlignment="Top"/>
-        <RadioButton Content="男" HorizontalAlignment="Left" Margin="526,72,0,0" VerticalAlignment="Top" Height="20" Width="42"/>
-        <RadioButton Content="女" HorizontalAlignment="Left" Margin="580,72,0,0" VerticalAlignment="Top" Height="20" Width="42"/>
-        <Slider HorizontalAlignment="Left" Margin="526,123,0,0" IsSnapToTickEnabled="True" VerticalAlignment="Top" Width="215" Minimum="1" SmallChange="1" LargeChange="1" Maximum="4"
-        Ticks="1,2,3,4"
-        TickPlacement="BottomRight"
-        TickFrequency="1"/>
-        <Label Content="職級" HorizontalAlignment="Left" Margin="473,119,0,0" VerticalAlignment="Top"/>
-        <Label Content="電話" HorizontalAlignment="Left" Margin="473,174,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="526,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Height="31" FontSize="18" VerticalContentAlignment="Center"/>
-        <Label Content="A" HorizontalAlignment="Left" Margin="726,147,0,0" VerticalAlignment="Top"/>
-        <Label Content="B" HorizontalAlignment="Left" Margin="658,147,0,0" VerticalAlignment="Top"/>
-        <Label Content="C" HorizontalAlignment="Left" Margin="590,147,0,0" VerticalAlignment="Top"/>
-        <Label Content="D" HorizontalAlignment="Left" Margin="523,147,0,0" VerticalAlignment="Top"/>
-        <Button Content="送出" HorizontalAlignment="Left" Margin="311,350,0,0" VerticalAlignment="Top" Width="70"/>
-        <Button Content="取消" HorizontalAlignment="Left" Margin="413,350,0,0" VerticalAlignment="Top" Width="70
-                "/>
+        <Border Background="#282D33"
+                BorderBrush="#3A4149"
+                BorderThickness="5"
+                CornerRadius="8,8,0,8" />
 
+        <Grid>
+            <TextBox HorizontalAlignment="Left" Margin="70,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217" Height="31" FontSize="18" VerticalContentAlignment="Center"/>
+            <TextBox HorizontalAlignment="Left" Margin="70,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217" Height="31" FontSize="18" VerticalContentAlignment="Center"/>
+            <TextBox HorizontalAlignment="Left" Margin="70,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217" Height="31" FontSize="18" VerticalContentAlignment="Center"/>
+            <TextBox HorizontalAlignment="Left" Margin="337,231,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="626" Height="31" FontSize="18" VerticalContentAlignment="Center"/>
+            <TextBox HorizontalAlignment="Left" Margin="400,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="626" Height="31" FontSize="18" VerticalContentAlignment="Center"/>
+            <Label Content="姓名 / Name" HorizontalAlignment="Left" Margin="70,60,0,0" VerticalAlignment="Top" FontSize="24" Foreground="#FFF9F6F6" FontFamily="Agency FB"/>
+            <Label Content="帳號 / Account" HorizontalAlignment="Left" Margin="70,134,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.611,-0.392" FontSize="24" FontFamily="Agency FB" Foreground="#FFF9F6F6"/>
+            <Label Content="密碼 / Password" HorizontalAlignment="Left" Margin="70,208,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.611,-0.392" Foreground="#FFF9F6F6" FontFamily="Agency FB" FontSize="24"/>
+            <Label Content="信箱" HorizontalAlignment="Left" Margin="394,106,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.611,-0.392"/>
+            <Label Content="地址" HorizontalAlignment="Left" Margin="394,155,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.611,-0.392"/>
+            <Label Content="性別" HorizontalAlignment="Left" Margin="473,66,0,0" VerticalAlignment="Top"/>
+            <RadioButton Content="男" HorizontalAlignment="Left" Margin="526,72,0,0" VerticalAlignment="Top" Height="20" Width="42"/>
+            <RadioButton Content="女" HorizontalAlignment="Left" Margin="580,72,0,0" VerticalAlignment="Top" Height="20" Width="42"/>
+            <Slider HorizontalAlignment="Left" Margin="526,123,0,0" IsSnapToTickEnabled="True" VerticalAlignment="Top" Width="215" Minimum="1" SmallChange="1" LargeChange="1" Maximum="4"
+            Ticks="1,2,3,4"
+            TickPlacement="BottomRight"
+            TickFrequency="1"/>
+            <Label Content="職級" HorizontalAlignment="Left" Margin="473,119,0,0" VerticalAlignment="Top"/>
+            <Label Content="電話" HorizontalAlignment="Left" Margin="473,174,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="526,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Height="31" FontSize="18" VerticalContentAlignment="Center"/>
+            <Label Content="A" HorizontalAlignment="Left" Margin="726,147,0,0" VerticalAlignment="Top"/>
+            <Label Content="B" HorizontalAlignment="Left" Margin="658,147,0,0" VerticalAlignment="Top"/>
+            <Label Content="C" HorizontalAlignment="Left" Margin="590,147,0,0" VerticalAlignment="Top"/>
+            <Label Content="D" HorizontalAlignment="Left" Margin="523,147,0,0" VerticalAlignment="Top"/>
+            <Button Content="送出" HorizontalAlignment="Left" Margin="311,350,0,0" VerticalAlignment="Top" Width="70"/>
+            <Button Content="取消" HorizontalAlignment="Left" Margin="413,350,0,0" VerticalAlignment="Top" Width="70"/>
+        </Grid>
     </Grid>
 </Window>

@@ -11,7 +11,7 @@
         Height="700" 
         Width="1350" 
         MinWidth="428"
-        WindowStyle="None"
+        WindowStyle="SingleBorderWindow"
         AllowsTransparency="False"
         ResizeMode="CanResizeWithGrip"
         WindowStartupLocation="CenterScreen"

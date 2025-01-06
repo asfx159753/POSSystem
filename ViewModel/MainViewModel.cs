@@ -55,6 +55,7 @@ namespace POSSystem.ViewModel
             _maxCommand = new RelayCommand(p => MaxApp(p));
             _showMenuCommand = new RelayCommand(p => ShowMenu());
             _closeMenuCommand = new RelayCommand(p => CloseMenu());
+            _openEmployeeListCommand = new RelayCommand(p => OpenEmployeeList());
         }
 
         // Show Menu
@@ -69,6 +70,13 @@ namespace POSSystem.ViewModel
             IsPanelVisible = false;
         }
 
+        //open Employee Window
+        public void OpenEmployeeList()
+        {
+            EmployeeList employeeList = new EmployeeList();
+            employeeList.Show();
+        }
+
         // Commands
         private readonly ICommand _closeCommand;
         public ICommand CloseAppCommand => _closeCommand;
@@ -81,6 +89,9 @@ namespace POSSystem.ViewModel
 
         private readonly ICommand _closeMenuCommand;
         public ICommand CloseMenuCommand => _closeMenuCommand;
+
+        private readonly ICommand _openEmployeeListCommand;
+        public ICommand OpenEmployeeListCommand => _openEmployeeListCommand;
 
         private bool _isPanelVisible;
         public bool IsPanelVisible
