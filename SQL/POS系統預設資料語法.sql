@@ -4,4 +4,10 @@ VALUES
  INSERT INTO Supplier (Code, Name, ContactPerson, Phone, Email, Address, City, Country, Website, BusinessType, TaxId, PaymentTerms, Status, Comments, Barcode)
 VALUES
 ('ERLIN', N'二霖有限公司', NULL, '02-2597-3365', NULL, N'台北市大同區承德路三段200號', N'台北市', N'台灣 / Taiwan', 'https://erlin.tw/', NULL, NULL, NULL, 1, 'Nolan安全帽、X-Lite安全帽、Belray機油台灣總代理', '11');
- 
+   -- 插入父類別，Category 設為 NULL，表示它們是最高層級
+INSERT INTO Parameters (Code, Name, Value, Type, Description, Category, ParentId, BarCode)  
+VALUES 
+('COLOR', N'顏色', NULL, NULL, N'顏色類別', NULL, NULL, 'COL'),
+('SIZE', N'尺寸', NULL, NULL, N'尺寸類別', NULL, NULL, 'SIZ'),
+('PRODUCT_TYPE', N'商品種類', NULL, NULL, N'商品分類', NULL, NULL, NULL),
+('UNIT', N'單位', NULL, NULL, N'商品使用的單位', NULL, NULL, NULL);
