@@ -10,26 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace POSSystem
 {
     /// <summary>
-    /// MainWindow.xaml 的互動邏輯
+    /// Inventory.xaml 的互動邏輯
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class InventoryWindow : Window
     {
-        public MainWindow()
+        public InventoryWindow()
         {
             InitializeComponent();
-        }
-
-        private void InventoryButton_Click(object sender, RoutedEventArgs e)
-        {
-            InventoryWindow inventoryWindow = new InventoryWindow();
-            inventoryWindow.Owner = this; // 設置擁有者
-            inventoryWindow.ShowDialog(); // 以模態方式顯示視窗
         }
     }
 }

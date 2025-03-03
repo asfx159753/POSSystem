@@ -72,7 +72,12 @@
       <DependentUpon>EmployeeRegisterWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helper\Converter.cs" />
+    <Compile Include="Inventory.xaml.cs">
+      <DependentUpon>Inventory.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainViewModel.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="ProductDetail.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SQLService.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
@@ -82,6 +87,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EmployeeRegisterWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inventory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

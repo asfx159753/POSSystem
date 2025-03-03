@@ -51,9 +51,9 @@
         </Border>
 
         <!-- 按鈕 -->
-        <Button Grid.Row="2" Grid.Column="0" Content="Button 1" />
-        <Button Grid.Row="2" Grid.Column="1" Content="Button 2" />
-        <Button Grid.Row="3" Grid.Column="0" Content="Button 3" />
-        <Button Grid.Row="3" Grid.Column="1" Content="Button 4" />
+        <Button Grid.Row="2" Grid.Column="0" FontSize="50" Content="庫存" Click="InventoryButton_Click" />
+        <Button Grid.Row="2" Grid.Column="1" FontSize="50" Content="開單" />
+        <Button Grid.Row="3" Grid.Column="0" FontSize="50" Content="客戶" />
+        <Button Grid.Row="3" Grid.Column="1" FontSize="50" Content="離開" />
     </Grid>
 </Window>
