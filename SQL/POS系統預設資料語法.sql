@@ -54,3 +54,59 @@ VALUES
     (1, 'VIOLET', '紫色', '#800080', NULL, '純紫色', 'COLOR', 1, '07', GETDATE(), GETDATE()),
     (1, 'BLACK', '黑色', '#000000', NULL, '純黑色', 'COLOR', 1, '08', GETDATE(), GETDATE()),
     (1, 'GRAY', '灰色', '#808080', NULL, '中性灰色', 'COLOR', 1, '09', GETDATE(), GETDATE());
+
+-- 新增尺寸的子項 (公分尺寸 220 ~ 295)
+INSERT INTO Parameters (ParentId, Code, Name, Value, Type, Description, Category, Status, BarCode, CreatedDate, UpdatedDate)
+VALUES
+    (2, '220', '22.0公分', '22.0', NULL, '22.0公分', 'SHOES_SIZE_JP', 1, '220', GETDATE(), GETDATE()),
+    (2, '225', '22.5公分', '22.5', NULL, '22.5公分', 'SHOES_SIZE_JP', 1, '225', GETDATE(), GETDATE()),
+    (2, '230', '23.0公分', '23.0', NULL, '23.0公分', 'SHOES_SIZE_JP', 1, '230', GETDATE(), GETDATE()),
+    (2, '235', '23.5公分', '23.5', NULL, '23.5公分', 'SHOES_SIZE_JP', 1, '235', GETDATE(), GETDATE()),
+    (2, '240', '24.0公分', '24.0', NULL, '24.0公分', 'SHOES_SIZE_JP', 1, '240', GETDATE(), GETDATE()),
+    (2, '245', '24.5公分', '24.5', NULL, '24.5公分', 'SHOES_SIZE_JP', 1, '245', GETDATE(), GETDATE()),
+    (2, '250', '25.0公分', '25.0', NULL, '25.0公分', 'SHOES_SIZE_JP', 1, '250', GETDATE(), GETDATE()),
+    (2, '255', '25.5公分', '25.5', NULL, '25.5公分', 'SHOES_SIZE_JP', 1, '255', GETDATE(), GETDATE()),
+    (2, '260', '26.0公分', '26.0', NULL, '26.0公分', 'SHOES_SIZE_JP', 1, '260', GETDATE(), GETDATE()),
+    (2, '265', '26.5公分', '26.5', NULL, '26.5公分', 'SHOES_SIZE_JP', 1, '265', GETDATE(), GETDATE()),
+    (2, '270', '27.0公分', '27.0', NULL, '27.0公分', 'SHOES_SIZE_JP', 1, '270', GETDATE(), GETDATE()),
+    (2, '275', '27.5公分', '27.5', NULL, '27.5公分', 'SHOES_SIZE_JP', 1, '275', GETDATE(), GETDATE()),
+    (2, '280', '28.0公分', '28.0', NULL, '28.0公分', 'SHOES_SIZE_JP', 1, '280', GETDATE(), GETDATE()),
+    (2, '285', '28.5公分', '28.5', NULL, '28.5公分', 'SHOES_SIZE_JP', 1, '285', GETDATE(), GETDATE()),
+    (2, '290', '29.0公分', '29.0', NULL, '29.0公分', 'SHOES_SIZE_JP', 1, '290', GETDATE(), GETDATE()),
+    (2, '295', '29.5公分', '29.5', NULL, '29.5公分', 'SHOES_SIZE_JP', 1, '295', GETDATE(), GETDATE());
+
+
+
+-- 新增尺寸的子項 (歐美尺寸)
+INSERT INTO Parameters (ParentId, Code, Name, Value, Type, Description, Category, Status, BarCode, CreatedDate, UpdatedDate)
+VALUES
+    (2, '035', 'EU35', '35', NULL, 'EU35號', 'SHOES_SIZE_EU', 1, '035', GETDATE(), GETDATE()),
+    (2, '036', 'EU36', '36', NULL, 'EU36號', 'SHOES_SIZE_EU', 1, '036', GETDATE(), GETDATE()),
+    (2, '037', 'EU37', '37', NULL, 'EU37號', 'SHOES_SIZE_EU', 1, '037', GETDATE(), GETDATE()),
+    (2, '038', 'EU38', '38', NULL, 'EU38號', 'SHOES_SIZE_EU', 1, '038', GETDATE(), GETDATE()),
+    (2, '039', 'EU39', '39', NULL, 'EU39號', 'SHOES_SIZE_EU', 1, '039', GETDATE(), GETDATE()),
+    (2, '040', 'EU40', '40', NULL, 'EU40號', 'SHOES_SIZE_EU', 1, '040', GETDATE(), GETDATE()),
+    (2, '041', 'EU41', '41', NULL, 'EU41號', 'SHOES_SIZE_EU', 1, '041', GETDATE(), GETDATE()),
+    (2, '042', 'EU42', '42', NULL, 'EU42號', 'SHOES_SIZE_EU', 1, '042', GETDATE(), GETDATE()),
+    (2, '043', 'EU43', '43', NULL, 'EU43號', 'SHOES_SIZE_EU', 1, '043', GETDATE(), GETDATE()),
+    (2, '044', 'EU44', '44', NULL, 'EU44號', 'SHOES_SIZE_EU', 1, '044', GETDATE(), GETDATE()),
+    (2, '045', 'EU45', '45', NULL, 'EU45號', 'SHOES_SIZE_EU', 1, '045', GETDATE(), GETDATE()),
+    (2, '046', 'EU46', '46', NULL, 'EU46號', 'SHOES_SIZE_EU', 1, '046', GETDATE(), GETDATE()),
+    (2, '047', 'EU47', '47', NULL, 'EU47號', 'SHOES_SIZE_EU', 1, '047', GETDATE(), GETDATE()),
+    (2, '048', 'EU48', '48', NULL, 'EU48號', 'SHOES_SIZE_EU', 1, '048', GETDATE(), GETDATE());
+
+
+-- 新增公用尺寸的子項
+INSERT INTO Parameters (ParentId, Code, Name, Value, Type, Description, Category, Status, BarCode, CreatedDate, UpdatedDate)
+VALUES
+    (2, '00S', 'S號', 'S', NULL, 'S號', 'COMMON_SIZE', 1, '00S', GETDATE(), GETDATE()),
+    (2, '00M', 'M號', 'M', NULL, 'M號', 'COMMON_SIZE', 1, '00M', GETDATE(), GETDATE()),
+    (2, '00L', 'L號', 'L', NULL, 'L號', 'COMMON_SIZE', 1, '00L', GETDATE(), GETDATE()),
+    (2, '0LL', 'LL號', 'LL', NULL, 'LL號', 'COMMON_SIZE', 1, '0LL', GETDATE(), GETDATE()),
+    (2, '03L', '3L號', '3L', NULL, '3L號', 'COMMON_SIZE', 1, '03L', GETDATE(), GETDATE()),
+    (2, '0XL', 'XL號', 'XL', NULL, 'XL號', 'COMMON_SIZE', 1, '0XL', GETDATE(), GETDATE()),
+    (2, '2XL', '2XL號', '2XL', NULL, '2XL號', 'COMMON_SIZE', 1, '2XL', GETDATE(), GETDATE()),
+    (2, '3XL', '3XL號', '3XL', NULL, '3XL號', 'COMMON_SIZE', 1, '3XL', GETDATE(), GETDATE());
+
+
+

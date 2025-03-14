@@ -33,7 +33,7 @@
 
             <StackPanel Margin="5" Grid.Row="0">
                 <TextBlock Text="商品名稱" Margin="5" />
-                <TextBox x:Name="NameTextBox" Margin="5" Height="30" />
+                <TextBox x:Name="NameTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
             </StackPanel>
 
             <Grid Grid.Row="1" Margin="5">
@@ -43,11 +43,11 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
                     <TextBlock Text="進貨價格" Margin="5" />
-                    <TextBox x:Name="PurchasePriceTextBox" Margin="5" Height="30" />
+                    <TextBox x:Name="PurchasePriceTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
                 </StackPanel>
-                <StackPanel Grid.Column="1" >
+                <StackPanel Grid.Column="1">
                     <TextBlock Text="銷售價格" Margin="5" />
-                    <TextBox x:Name="SalePriceTextBox" Margin="5" Height="30" />
+                    <TextBox x:Name="SalePriceTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
                 </StackPanel>
             </Grid>
 
@@ -57,27 +57,27 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <StackPanel Grid.Column="0" >
+                <StackPanel Grid.Column="0">
                     <TextBlock Text="尺寸" Margin="5" />
-                    <TextBox x:Name="SizeTextBox" Margin="5" Height="30" />
+                    <TextBox x:Name="SizeTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
                 </StackPanel>
                 <StackPanel Grid.Column="1">
                     <TextBlock Text="顏色" Margin="5" />
-                    <TextBox x:Name="ColorTextBox" Margin="5" Height="30" />
+                    <TextBox x:Name="ColorTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
                 </StackPanel>
                 <StackPanel Grid.Column="2">
                     <TextBlock Text="數量" Margin="5" />
-                    <TextBox x:Name="QuantityTextBox" Margin="5" Height="30" />
+                    <TextBox x:Name="QuantityTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
                 </StackPanel>
             </Grid>
 
             <StackPanel Margin="5" Grid.Row="3">
                 <TextBlock Text="進貨日期" Margin="5" />
-                <TextBox x:Name="PurchaseDateTextBox" Margin="5" Height="30" />
+                <TextBox x:Name="PurchaseDateTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5" Grid.Row="4">
-                <Button Content="新增" Margin="5" Width="100" Height="50" />
+                <Button Content="新增" Margin="5" Width="100" Height="50" Click="AddButton_Click" />
                 <Button Content="編輯" Margin="5" Width="100" Height="50" />
                 <Button Content="刪除" Margin="5" Width="100" Height="50" />
             </StackPanel>

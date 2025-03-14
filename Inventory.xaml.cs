@@ -23,5 +23,12 @@ namespace POSSystem
         {
             InitializeComponent();
         }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            InventoryAdd addWindow = new InventoryAdd();
+            addWindow.Owner = this; // 設置擁有者
+            addWindow.ShowDialog(); // 以模態方式顯示視窗
+        }
     }
 }

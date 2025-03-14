@@ -133,17 +133,19 @@ GO
 --建立商品明細表
 CREATE TABLE ProductDetail (
     Id INT IDENTITY(1,1) PRIMARY KEY NOT NULL,       -- 變體編號
-    ProductId INT NOT NULL,                         -- 關聯的主商品 ID
-    Size NVARCHAR(10) NULL,                     -- 尺寸
-    Color NVARCHAR(30) NULL,                    -- 顏色
-    SKU NVARCHAR(50) NOT NULL UNIQUE,               -- 變體的庫存單位
-    CostPrice DECIMAL(10, 2) NOT NULL,              -- 進貨價格
-    RetailPrice DECIMAL(10, 2) NOT NULL,            -- 建議售價
-    Stock INT NOT NULL DEFAULT 0,                       -- 庫存量
-    Barcode NVARCHAR(50) NOT NULL,                      -- 條碼
-    ImageUrl NVARCHAR(255) NULL,                    -- 變體的圖片 URL
+    ProductId INT NOT NULL,                          -- 關聯的主商品 ID
+    Size NVARCHAR(10) NULL,                          -- 尺寸
+    Color NVARCHAR(30) NULL,                         -- 主顏色
+    SubColor NVARCHAR(30) NULL,                      -- 副顏色
+    SKU NVARCHAR(50) NOT NULL UNIQUE,                -- 變體的庫存單位
+    CostPrice DECIMAL(10, 2) NOT NULL,               -- 進貨價格
+    RetailPrice DECIMAL(10, 2) NOT NULL,             -- 建議售價
+    Stock INT NOT NULL DEFAULT 0,                    -- 庫存量
+    Barcode NVARCHAR(50) NOT NULL,                   -- 條碼
+    ImageUrl NVARCHAR(255) NULL,                     -- 變體的圖片 URL
     Status NVARCHAR(20) NOT NULL DEFAULT 'Available',-- 變體狀態
-    CONSTRAINT FK_ProductDetail_ProductId_Product_Id FOREIGN KEY (ProductId) REFERENCES Product(Id)
+    CONSTRAINT FK_ProductDetail_ProductId_Product_Id 
+        FOREIGN KEY (ProductId) REFERENCES Product(Id)
 );
 
 --移除商品明細表
