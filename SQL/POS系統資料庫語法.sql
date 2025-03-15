@@ -137,7 +137,6 @@ CREATE TABLE ProductDetail (
     Size NVARCHAR(10) NULL,                          -- 尺寸
     Color NVARCHAR(30) NULL,                         -- 主顏色
     SubColor NVARCHAR(30) NULL,                      -- 副顏色
-    SKU NVARCHAR(50) NOT NULL UNIQUE,                -- 變體的庫存單位
     CostPrice DECIMAL(10, 2) NOT NULL,               -- 進貨價格
     RetailPrice DECIMAL(10, 2) NOT NULL,             -- 建議售價
     Stock INT NOT NULL DEFAULT 0,                    -- 庫存量
