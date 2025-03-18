@@ -133,6 +133,7 @@ GO
 --建立商品明細表
 CREATE TABLE ProductDetail (
     Id INT IDENTITY(1,1) PRIMARY KEY NOT NULL,       -- 變體編號
+	DetailName NVARCHAR(100) NOT NULL DEFAULT '',
     ProductId INT NOT NULL,                          -- 關聯的主商品 ID
     Size NVARCHAR(10) NULL,                          -- 尺寸
     Color NVARCHAR(30) NULL,                         -- 主顏色

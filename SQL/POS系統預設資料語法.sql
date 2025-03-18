@@ -6,22 +6,13 @@ INSERT INTO Supplier (Code, Name, ContactPerson, Phone, Email, Address, City, Co
 VALUES 
 ('HYOD', N'株式会社ヒョウドウプロダクツ', NULL, '053-465-8281', 'info@hyod-products.com', N'静岡県浜松市中央区市野町2732', N'浜松市', N'日本 / Japan', 'https://www.hyod-products.com/', NULL, NULL, NULL, 1, 'HYOD官方供應商','66');
 
+INSERT INTO Supplier (Code, Name, ContactPerson, Phone, Email, Address, City, Country, Website, BusinessType, TaxId, PaymentTerms, Status, Comments,Barcode)
+VALUES 
+('DACHIAO', N'大橋機車生活精品館', NULL, '02-2591-9636', 'shoeitaiwan1022@gmail.com', N'台北市大同區延平北路三段128號', N'台北市', N'台灣 / Taiwan', 'https://www.dachiao.com.tw/', NULL, NULL, NULL, 1, 'SHOEI Taiwan 總代理','02');
 
-INSERT INTO Supplier (
-    Code, Name, ContactPerson, Phone, Email, Address, City, Country, Website, BusinessType, TaxId, PaymentTerms, Status, Comments,Barcode
-)
-VALUES (
-    'DACHIAO', N'大橋機車生活精品館', NULL, '02-2591-9636', 'shoeitaiwan1022@gmail.com', N'台北市大同區延平北路三段128號', N'台北市', N'台灣 / Taiwan', 'https://www.dachiao.com.tw/', NULL, NULL, NULL, 1, 'SHOEI Taiwan 總代理','02'
-);
-
-
-INSERT INTO Supplier (
-    Code, Name, ContactPerson, Phone, Email, Address, City, Country, Website, BusinessType, TaxId, PaymentTerms, Status, Comments,Barcode
-)
-VALUES (
-    'SPCONNECT', 'SP Connect', NULL, NULL, NULL, NULL, NULL, N'奧地利 / Austria', 'https://sp-connect.com/', NULL, NULL, NULL, 1, 'Smartphone mounting solutions','10'
-);
-
+INSERT INTO Supplier (Code, Name, ContactPerson, Phone, Email, Address, City, Country, Website, BusinessType, TaxId, PaymentTerms, Status, Comments,Barcode)
+VALUES 
+('SPCONNECT', 'SP Connect', NULL, NULL, NULL, NULL, NULL, N'奧地利 / Austria', 'https://sp-connect.com/', NULL, NULL, NULL, 1, 'Smartphone mounting solutions','10');
 
 INSERT INTO Supplier (Code, Name, ContactPerson, Phone, Email, Address, City, Country, Website, BusinessType, TaxId, PaymentTerms, Status, Comments, Barcode)
 VALUES

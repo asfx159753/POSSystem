@@ -1,4 +1,5 @@
-﻿using System;
+﻿using POSSystem.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,25 @@ namespace POSSystem
         public InventoryWindow()
         {
             InitializeComponent();
+            DataContext = new InventoryViewModel();
         }
 
+        public class InventoryViewModel
+        {
+            public List<Parameters> ColorList { get; set; }
+
+            public InventoryViewModel()
+            {
+                ColorList = SQLService.GetColorList();
+            }
+        }
+
+        private void BarCodeButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (BarCodeTextBox.IsEnabled)
+                BarCodeTextBox.IsEnabled = false;
+            else
+                BarCodeTextBox.IsEnabled = true;
+        }
     }
 }

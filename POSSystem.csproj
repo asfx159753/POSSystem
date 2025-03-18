@@ -76,6 +76,7 @@
       <DependentUpon>Inventory.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainViewModel.cs" />
+    <Compile Include="Model\Parameters.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\ProductDetail.cs" />
     <Compile Include="Settings.cs" />

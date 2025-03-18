@@ -28,16 +28,33 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <StackPanel Margin="5" Grid.Row="0">
-                <TextBlock Text="商品名稱" Margin="5" />
+            <Grid Grid.Row="0" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="原型 *" Margin="5" Foreground="Red" />
+                    <TextBox x:Name="ProtoTypeTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="代號 *" Margin="5" Foreground="Red" />
+                    <TextBox x:Name="CodeTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
+                </StackPanel>
+            </Grid>
+
+            <StackPanel Margin="5" Grid.Row="1">
+                <TextBlock Text="商品名稱 *" Margin="5" Foreground="Red" />
                 <TextBox x:Name="NameTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
             </StackPanel>
 
-            <Grid Grid.Row="1" Margin="5">
+            <Grid Grid.Row="2" Margin="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -52,7 +69,7 @@
                 </StackPanel>
             </Grid>
 
-            <Grid Grid.Row="2" Margin="5">
+            <Grid Grid.Row="3" Margin="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -67,7 +84,7 @@
                 </StackPanel>
             </Grid>
 
-            <Grid Grid.Row="3" Margin="5">
+            <Grid Grid.Row="4" Margin="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -75,11 +92,11 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
                     <TextBlock Text="主色" Margin="5" />
-                    <TextBox x:Name="ColorTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
+                    <ComboBox x:Name="MainColorComboBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" ItemsSource="{Binding ColorList}" DisplayMemberPath="Name" SelectedValuePath="Value" />
                 </StackPanel>
                 <StackPanel Grid.Column="1">
                     <TextBlock Text="副色" Margin="5" />
-                    <TextBox x:Name="SubColorTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
+                    <ComboBox x:Name="SubColorComboBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" ItemsSource="{Binding ColorList}" DisplayMemberPath="Name" SelectedValuePath="Value" />
                 </StackPanel>
                 <StackPanel Grid.Column="2">
                     <TextBlock Text="數量" Margin="5" />
@@ -87,7 +104,22 @@
                 </StackPanel>
             </Grid>
 
-            <Grid Grid.Row="4" Margin="5">
+            <Grid Grid.Row="5" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="條碼" Margin="5" />
+                    <TextBox x:Name="BarCodeTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="" Margin="5" />
+                    <Button Content="編輯條碼" Margin="5" Width="70" Height="30" Click="BarCodeButton_Click"  />
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="6" Margin="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="2*" />
@@ -102,7 +134,7 @@
                 </StackPanel>
             </Grid>
 
-            <Grid Grid.Row="5" Margin="5">
+            <Grid Grid.Row="7" Margin="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="2*" />
@@ -117,9 +149,7 @@
                 </StackPanel>
             </Grid>
 
-
-
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5" Grid.Row="6">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5" Grid.Row="8">
                 <Button Content="新增" Margin="5" Width="72" Height="50" />
                 <Button Content="編輯" Margin="5" Width="72" Height="50" />
                 <Button Content="複製" Margin="5" Width="72" Height="50" />
