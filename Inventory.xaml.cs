@@ -29,10 +29,13 @@ namespace POSSystem
         public class InventoryViewModel
         {
             public List<Parameters> ColorList { get; set; }
-
+            public List<Parameters> CategoryList { get; set; }
+            public List<Supplier> SupplierList { get; set; }
             public InventoryViewModel()
             {
-                ColorList = SQLService.GetColorList();
+                ColorList = InventoryService.GetColorList();
+                CategoryList = InventoryService.GetCategoryList();
+                SupplierList = InventoryService.GetSupplierList();  
             }
         }
 

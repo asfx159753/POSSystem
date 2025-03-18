@@ -30,126 +30,133 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0" Margin="5">
+            <Grid Grid.Row="0" Margin="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
-                    <TextBlock Text="原型 *" Margin="5" Foreground="Red" />
-                    <TextBox x:Name="ProtoTypeTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
+                    <TextBlock Text="原型 *" Margin="3" Foreground="Red" />
+                    <TextBox x:Name="ProtoTypeTextBox" Margin="3" Height="30" FontSize="20" VerticalContentAlignment="Center" />
                 </StackPanel>
                 <StackPanel Grid.Column="1">
-                    <TextBlock Text="代號 *" Margin="5" Foreground="Red" />
-                    <TextBox x:Name="CodeTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
+                    <TextBlock Text="代號 *" Margin="3" Foreground="Red" />
+                    <TextBox x:Name="CodeTextBox" Margin="3" Height="30" FontSize="20" VerticalContentAlignment="Center" />
                 </StackPanel>
             </Grid>
 
-            <StackPanel Margin="5" Grid.Row="1">
-                <TextBlock Text="商品名稱 *" Margin="5" Foreground="Red" />
-                <TextBox x:Name="NameTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
+            <StackPanel  Grid.Row="1" Margin="3">
+                <TextBlock Text="商品名稱 *" Margin="3" Foreground="Red" />
+                <TextBox x:Name="NameTextBox" Margin="3" Height="30" FontSize="20" VerticalContentAlignment="Center" />
             </StackPanel>
 
-            <Grid Grid.Row="2" Margin="5">
+            <Grid Grid.Row="2" Margin="3">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
-                    <TextBlock Text="類別" Margin="5" />
-                    <TextBox x:Name="CategoryTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
+                    <TextBlock Text="類別" Margin="3" />
+                    <ComboBox x:Name="CategoryComboBox" Margin="3" Height="30" FontSize="20" VerticalContentAlignment="Center" ItemsSource="{Binding CategoryList}" DisplayMemberPath="DisplayValueName" SelectedValuePath="BarCode" />
                 </StackPanel>
                 <StackPanel Grid.Column="1">
-                    <TextBlock Text="尺寸" Margin="5" />
-                    <TextBox x:Name="SizeTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
+                    <TextBlock Text="尺寸" Margin="3" />
+                    <TextBox x:Name="SizeTextBox" Margin="3" Height="30" FontSize="20" VerticalContentAlignment="Center" />
                 </StackPanel>
             </Grid>
 
-            <Grid Grid.Row="3" Margin="5">
+            <StackPanel Grid.Row="3" Margin="3">
+                <TextBlock Text="進貨廠商" Margin="3" />
+                <ComboBox x:Name="SupplierComboBox" Margin="3" Height="30" FontSize="20" VerticalContentAlignment="Center" ItemsSource="{Binding SupplierList}" DisplayMemberPath="DisplayValueName" SelectedValuePath="BarCode" />
+            </StackPanel>
+
+            <Grid Grid.Row="4" Margin="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
+               
                 <StackPanel Grid.Column="0">
-                    <TextBlock Text="進貨價格" Margin="5" />
-                    <TextBox x:Name="PurchasePriceTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
+                    <TextBlock Text="進貨價格" Margin="3" />
+                    <TextBox x:Name="PurchasePriceTextBox" Margin="3" Height="30" FontSize="20" VerticalContentAlignment="Center" />
                 </StackPanel>
                 <StackPanel Grid.Column="1">
-                    <TextBlock Text="銷售價格" Margin="5" />
-                    <TextBox x:Name="SalePriceTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
+                    <TextBlock Text="銷售價格" Margin="3" />
+                    <TextBox x:Name="SalePriceTextBox" Margin="3" Height="30" FontSize="20" VerticalContentAlignment="Center" />
                 </StackPanel>
             </Grid>
 
-            <Grid Grid.Row="4" Margin="5">
+            <Grid Grid.Row="5" Margin="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
-                    <TextBlock Text="主色" Margin="5" />
-                    <ComboBox x:Name="MainColorComboBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" ItemsSource="{Binding ColorList}" DisplayMemberPath="Name" SelectedValuePath="Value" />
+                    <TextBlock Text="主色" Margin="3" />
+                    <ComboBox x:Name="MainColorComboBox" Margin="3" Height="30" FontSize="20" VerticalContentAlignment="Center" ItemsSource="{Binding ColorList}" DisplayMemberPath="DisplayValueName" SelectedValuePath="Value" />
                 </StackPanel>
                 <StackPanel Grid.Column="1">
-                    <TextBlock Text="副色" Margin="5" />
-                    <ComboBox x:Name="SubColorComboBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" ItemsSource="{Binding ColorList}" DisplayMemberPath="Name" SelectedValuePath="Value" />
+                    <TextBlock Text="副色" Margin="3" />
+                    <ComboBox x:Name="SubColorComboBox" Margin="3" Height="30" FontSize="20" VerticalContentAlignment="Center" ItemsSource="{Binding ColorList}" DisplayMemberPath="DisplayValueName" SelectedValuePath="Value" />
                 </StackPanel>
                 <StackPanel Grid.Column="2">
-                    <TextBlock Text="數量" Margin="5" />
-                    <TextBox x:Name="QuantityTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
+                    <TextBlock Text="數量" Margin="3" />
+                    <TextBox x:Name="QuantityTextBox" Margin="3" Height="30" FontSize="20" VerticalContentAlignment="Center" />
                 </StackPanel>
             </Grid>
 
-            <Grid Grid.Row="5" Margin="5">
+            <Grid Grid.Row="6" Margin="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="3*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
-                    <TextBlock Text="條碼" Margin="5" />
-                    <TextBox x:Name="BarCodeTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
+                    <TextBlock Text="條碼" Margin="3" />
+                    <TextBox x:Name="BarCodeTextBox" Margin="3" Height="30" FontSize="20" VerticalContentAlignment="Center" />
                 </StackPanel>
                 <StackPanel Grid.Column="1">
-                    <TextBlock Text="" Margin="5" />
-                    <Button Content="編輯條碼" Margin="5" Width="70" Height="30" Click="BarCodeButton_Click"  />
+                    <TextBlock Text="" Margin="3" />
+                    <Button Content="編輯條碼" Margin="3" Width="70" Height="30" Click="BarCodeButton_Click"  />
                 </StackPanel>
             </Grid>
 
-            <Grid Grid.Row="6" Margin="5">
+            <Grid Grid.Row="7" Margin="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="2*" />
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
-                    <TextBlock Text="進貨歷程" Margin="5" />
-                    <Button Content="進貨廠商" Margin="5" Width="95" Height="30"  />
+                    <TextBlock Text="進貨歷程" Margin="3" />
+                    <Button Content="進貨廠商" Margin="3" Width="100" Height="30"  />
                 </StackPanel>
                 <StackPanel Grid.Column="1">
-                    <TextBlock Text="最後進貨日期" Margin="5" />
-                    <TextBox x:Name="PurchaseDateTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
+                    <TextBlock Text="最後進貨日期" Margin="3" />
+                    <TextBox x:Name="PurchaseDateTextBox" Margin="3" Height="30" FontSize="20" VerticalContentAlignment="Center" />
                 </StackPanel>
             </Grid>
 
-            <Grid Grid.Row="7" Margin="5">
+            <Grid Grid.Row="8" Margin="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="2*" />
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
-                    <TextBlock Text="銷售歷程" Margin="5" />
-                    <Button Content="銷售客戶" Margin="5" Width="95" Height="30"  />
+                    <TextBlock Text="銷售歷程" Margin="3" />
+                    <Button Content="銷售客戶" Margin="3" Width="100" Height="30"  />
                 </StackPanel>
                 <StackPanel Grid.Column="1">
-                    <TextBlock Text="最後銷售日期" Margin="5" />
-                    <TextBox x:Name="SaleDateTextBox" Margin="5" Height="30" FontSize="20" VerticalContentAlignment="Center" />
+                    <TextBlock Text="最後銷售日期" Margin="3" />
+                    <TextBox x:Name="SaleDateTextBox" Margin="3" Height="30" FontSize="20" VerticalContentAlignment="Center" />
                 </StackPanel>
             </Grid>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5" Grid.Row="8">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5" Grid.Row="9">
                 <Button Content="新增" Margin="5" Width="72" Height="50" />
                 <Button Content="編輯" Margin="5" Width="72" Height="50" />
                 <Button Content="複製" Margin="5" Width="72" Height="50" />

@@ -20,5 +20,7 @@ namespace POSSystem.Model
         public string BarCode { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
+
+        public string DisplayValueName => $"{BarCode}-{Name}";
     }
 }

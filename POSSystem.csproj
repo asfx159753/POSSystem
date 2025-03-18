@@ -65,6 +65,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CommonSQLService.cs" />
     <Compile Include="EmployeeList.xaml.cs">
       <DependentUpon>EmployeeList.xaml</DependentUpon>
     </Compile>
@@ -75,10 +76,13 @@
     <Compile Include="Inventory.xaml.cs">
       <DependentUpon>Inventory.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InventoryService.cs" />
+    <Compile Include="InventorySQLService.cs" />
     <Compile Include="MainViewModel.cs" />
     <Compile Include="Model\Parameters.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\ProductDetail.cs" />
+    <Compile Include="Model\Supplier.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SQLService.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
