@@ -26,7 +26,6 @@ namespace POSSystem.Model
         public DateTime JoinDate { get; set; }
         public string Comments { get; set; }
         public string Barcode { get; set; }
-
-        public string DisplayValueName => $"{Barcode}-{Name}";
+        public string DisplayValueName => $"{Barcode}-{Code}-{Name}";
     }
 }

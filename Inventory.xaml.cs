@@ -22,8 +22,10 @@ namespace POSSystem
     {
         public InventoryWindow()
         {
+
             InitializeComponent();
             DataContext = new InventoryViewModel();
+
         }
 
         public class InventoryViewModel
@@ -35,9 +37,12 @@ namespace POSSystem
             {
                 ColorList = InventoryService.GetColorList();
                 CategoryList = InventoryService.GetCategoryList();
-                SupplierList = InventoryService.GetSupplierList();  
+                SupplierList = InventoryService.GetSupplierList();
+
             }
+
         }
+
 
         private void BarCodeButton_Click(object sender, RoutedEventArgs e)
         {

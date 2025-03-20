@@ -61,7 +61,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
-                    <TextBlock Text="類別" Margin="3" />
+                    <TextBlock Text="類別 *" Margin="3" Foreground="Red"/>
                     <ComboBox x:Name="CategoryComboBox" Margin="3" Height="30" FontSize="20" VerticalContentAlignment="Center" ItemsSource="{Binding CategoryList}" DisplayMemberPath="DisplayValueName" SelectedValuePath="BarCode" />
                 </StackPanel>
                 <StackPanel Grid.Column="1">
@@ -71,7 +71,7 @@
             </Grid>
 
             <StackPanel Grid.Row="3" Margin="3">
-                <TextBlock Text="進貨廠商" Margin="3" />
+                <TextBlock Text="進貨廠商 *" Margin="3" Foreground="Red"/>
                 <ComboBox x:Name="SupplierComboBox" Margin="3" Height="30" FontSize="20" VerticalContentAlignment="Center" ItemsSource="{Binding SupplierList}" DisplayMemberPath="DisplayValueName" SelectedValuePath="BarCode" />
             </StackPanel>
 
@@ -82,18 +82,17 @@
                 </Grid.ColumnDefinitions>
                
                 <StackPanel Grid.Column="0">
-                    <TextBlock Text="進貨價格" Margin="3" />
+                    <TextBlock Text="進貨價格 *" Margin="3" Foreground="Red"/>
                     <TextBox x:Name="PurchasePriceTextBox" Margin="3" Height="30" FontSize="20" VerticalContentAlignment="Center" />
                 </StackPanel>
                 <StackPanel Grid.Column="1">
-                    <TextBlock Text="銷售價格" Margin="3" />
+                    <TextBlock Text="銷售價格 *" Margin="3" Foreground="Red"/>
                     <TextBox x:Name="SalePriceTextBox" Margin="3" Height="30" FontSize="20" VerticalContentAlignment="Center" />
                 </StackPanel>
             </Grid>
 
             <Grid Grid.Row="5" Margin="3">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
@@ -104,10 +103,6 @@
                 <StackPanel Grid.Column="1">
                     <TextBlock Text="副色" Margin="3" />
                     <ComboBox x:Name="SubColorComboBox" Margin="3" Height="30" FontSize="20" VerticalContentAlignment="Center" ItemsSource="{Binding ColorList}" DisplayMemberPath="DisplayValueName" SelectedValuePath="Value" />
-                </StackPanel>
-                <StackPanel Grid.Column="2">
-                    <TextBlock Text="數量" Margin="3" />
-                    <TextBox x:Name="QuantityTextBox" Margin="3" Height="30" FontSize="20" VerticalContentAlignment="Center" />
                 </StackPanel>
             </Grid>
 
@@ -160,7 +155,7 @@
                 <Button Content="新增" Margin="5" Width="72" Height="50" />
                 <Button Content="編輯" Margin="5" Width="72" Height="50" />
                 <Button Content="複製" Margin="5" Width="72" Height="50" />
-                <Button Content="刪除" Margin="5" Width="72" Height="50" />
+                <Button Content="關閉" Margin="5" Width="72" Height="50" />
             </StackPanel>
         </Grid>
     </Grid>
