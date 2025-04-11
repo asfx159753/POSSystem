@@ -1,6 +1,7 @@
 ﻿using POSSystem.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,16 +31,41 @@ namespace POSSystem
 
         public class InventoryViewModel
         {
-            public List<Parameters> ColorList { get; set; }
-            public List<Parameters> CategoryList { get; set; }
-            public List<Supplier> SupplierList { get; set; }
+            public ObservableCollection<Product> InventoryList { get; set; }
+            public ObservableCollection<Parameters> ColorList { get; set; }
+            public ObservableCollection<Parameters> CategoryList { get; set; }
+            public ObservableCollection<Supplier> SupplierList { get; set; }
+
             public InventoryViewModel()
             {
-                ColorList = InventoryService.GetColorList();
-                CategoryList = InventoryService.GetCategoryList();
-                SupplierList = InventoryService.GetSupplierList();
+                InventoryList = new ObservableCollection<Product>();
+                ColorList = new ObservableCollection<Parameters>(InventorySQLService.GetColorList());
+                CategoryList = new ObservableCollection<Parameters>(InventorySQLService.GetCategoryList());
+                SupplierList = new ObservableCollection<Supplier>(InventorySQLService.GetSupplierList());
+
+                // 添加預設項目
+                ColorList.Insert(0, new Parameters { Name = "請選擇", Value = "" });
+                CategoryList.Insert(0, new Parameters { Name = "請選擇", Value = "" });
+                SupplierList.Insert(0, new Supplier { Name = "請選擇", Barcode = "" });
+
+                // 生成假資料
+                GenerateDummyData();
 
             }
+
+            private void GenerateDummyData()
+            {
+                for (int i = 1; i <= 50; i++)
+                {
+                    InventoryList.Add(new Product
+                    {
+                        Name = $"商品名稱 {i}",
+                        Code = $"商品代號 {i}",
+                        Id = i 
+                    });
+                }
+            }
+
 
         }
 
@@ -51,5 +77,6 @@ namespace POSSystem
             else
                 BarCodeTextBox.IsEnabled = true;
         }
+
     }
 }

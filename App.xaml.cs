@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Syncfusion.Licensing;
 
 namespace POSSystem
 {
@@ -13,5 +14,10 @@ namespace POSSystem
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
+            base.OnStartup(e);
+        }
     }
 }
