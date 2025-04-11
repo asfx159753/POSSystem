@@ -59,3 +59,8 @@ ApplicationInsights.TelemetryChannel.config
 
 # Local configuration files
 *.config.local
+
+# Ignore local configuration files
+App.config
+App.xaml
+App.xaml.cs
