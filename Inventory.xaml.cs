@@ -72,10 +72,10 @@ namespace POSSystem
 
         private void BarCodeButton_Click(object sender, RoutedEventArgs e)
         {
-            if (BarCodeTextBox.IsEnabled)
-                BarCodeTextBox.IsEnabled = false;
-            else
-                BarCodeTextBox.IsEnabled = true;
+            //if (BarCodeTextBox.IsEnabled)
+            //    BarCodeTextBox.IsEnabled = false;
+            //else
+            //    BarCodeTextBox.IsEnabled = true;
         }
 
     }

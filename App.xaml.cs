@@ -16,7 +16,7 @@ namespace POSSystem
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
+            SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NNaF5cXmBCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdmWXtfcXZXQmBeU0NzV0NWYUA=");
             base.OnStartup(e);
         }
     }

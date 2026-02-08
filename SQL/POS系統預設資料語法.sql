@@ -165,4 +165,4 @@ VALUES ('001', N'訂金收入', N'訂金收入', '99', GETDATE(), NULL, '1', NUL
 
 
 INSERT INTO ProductDetail (ProductId, Size, Color, SubColor, CostPrice, RetailPrice, Stock, Barcode, ImageUrl, Status)
-VALUES (1, NULL, NULL, NULL, 0, 0, 0, '001', NULL, 'Available');
+VALUES (1, NULL, NULL, NULL, 0, 0, 0, '001', NULL, '1');

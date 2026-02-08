@@ -120,7 +120,7 @@ CREATE TABLE Product (
     Category NVARCHAR(50) NOT NULL,                 -- 商品分類
     AddedDate DATETIME NOT NULL DEFAULT GETDATE(),  -- 上架日期
     ImageUrl NVARCHAR(255) NULL,                    -- 主圖片 URL
-    Status NVARCHAR(20) NOT NULL DEFAULT 'Available',-- 商品狀態
+    Status NVARCHAR(20) NOT NULL DEFAULT '1',-- 商品狀態
     SupplierId INT NULL,                            -- 供應商編號 (外鍵)
     CONSTRAINT FK_Product_Id_Supplier_Id FOREIGN KEY (SupplierId) REFERENCES Supplier(Id)
 );
@@ -143,7 +143,7 @@ CREATE TABLE ProductDetail (
     Stock INT NOT NULL DEFAULT 0,                    -- 庫存量
     Barcode NVARCHAR(50) NOT NULL,                   -- 條碼
     ImageUrl NVARCHAR(255) NULL,                     -- 變體的圖片 URL
-    Status NVARCHAR(20) NOT NULL DEFAULT 'Available',-- 變體狀態
+    Status NVARCHAR(20) NOT NULL DEFAULT '1',-- 變體狀態
     CONSTRAINT FK_ProductDetail_ProductId_Product_Id 
         FOREIGN KEY (ProductId) REFERENCES Product(Id)
 );
