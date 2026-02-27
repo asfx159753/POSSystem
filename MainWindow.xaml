@@ -5,12 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"        
         xmlns:local="clr-namespace:POSSystem.Helper"
         xmlns:vm="clr-namespace:POSSystem.ViewModel"
-        
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         Title="MainWindow" 
         x:Name="ResponsViewWindow"
         Height="750" 
-        Width="650" 
-        MinWidth="428"
+        Width="1000" 
         WindowStyle="SingleBorderWindow"
         AllowsTransparency="False"
         ResizeMode="NoResize"
@@ -19,6 +18,50 @@
         Foreground="Aqua">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibility" />
+        <!-- 自訂按鈕樣式 -->
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="Margin" Value="8"/>
+            <Setter Property="Foreground" Value="#483D8B"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#4169E1"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="18">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="border"
+                                                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                            To="#FF8C00" Duration="0:0:0.2"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="border"
+                                                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                            To="White" Duration="0:0:0.2"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Window.DataContext>
         <vm:MainViewModel/>
@@ -26,34 +69,61 @@
 
     <Grid Background="#483D8B">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <!-- 2x2 空間 -->
-        <Border Grid.Row="0" Grid.Column="0" BorderBrush="#4169E1" BorderThickness="3" CornerRadius="10" Background="#4169E1" Margin="3">
-            <Image Source="Assets/USER_ICON.png" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <!-- 上方合併區塊，改為2欄Grid -->
+        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" BorderBrush="#4169E1" BorderThickness="3" CornerRadius="18" Background="#4169E1" Margin="6">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+                <!-- 左半邊：上下兩區 -->
+                <Grid Grid.Column="0" Margin="12,0,12,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <!-- 庫存總數量 -->
+                    <Border Grid.Row="0" Background="#5A6AFF" CornerRadius="18" Margin="0,16,0,8">
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock Text="庫存總數量" Foreground="White" FontSize="28" FontWeight="Bold" HorizontalAlignment="Center"/>
+                            <TextBlock Text="{Binding TotalStockCount}" Foreground="White" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                    <!-- 庫存總金額 -->
+                    <Border Grid.Row="1" Background="#8A9AFF" CornerRadius="18" Margin="0,8,0,16">
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock Text="庫存總金額" Foreground="White" FontSize="28" FontWeight="Bold" HorizontalAlignment="Center"/>
+                            <TextBlock Text="{Binding TotalStockAmount}" Foreground="White" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <!-- 右半邊：LiveCharts.Wpf 圓餅圖 -->
+                <Border Grid.Column="1" Background="White" CornerRadius="18" Margin="0,16,16,16">
+                    <lvc:PieChart Series="{Binding PieSeries}" LegendLocation="Right" />
+                </Border>
+            </Grid>
         </Border>
-        <Border Grid.Row="0" Grid.Column="1" BorderBrush="#4169E1" BorderThickness="3" CornerRadius="10" Background="#4169E1" Margin="3">
-            <Image Source="Assets/USER_ICON.png" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        </Border>
-        <Border Grid.Row="1" Grid.Column="0" BorderBrush="#4169E1" BorderThickness="3" CornerRadius="10" Background="#4169E1" Margin="3">
-            <Image Source="Assets/USER_ICON.png" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        </Border>
-        <Border Grid.Row="1" Grid.Column="1" BorderBrush="#4169E1" BorderThickness="3" CornerRadius="10" Background="#4169E1" Margin="3">
-            <Image Source="Assets/USER_ICON.png" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        </Border>
+ 
+        <!-- 按鈕區 -->
+        <!-- 第一列 -->
+        <Button Grid.Row="1" Grid.Column="0" Content="產品" Style="{StaticResource RoundedButtonStyle}" />
+        <Button Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Content="庫存" Style="{StaticResource RoundedButtonStyle}" Click="InventoryButton_Click" />
+        <Button Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Content="結帳" Style="{StaticResource RoundedButtonStyle}" />
+        <Button Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Content="離開" Style="{StaticResource RoundedButtonStyle}" />
 
-        <!-- 按鈕 -->
-        <Button Grid.Row="2" Grid.Column="0" FontSize="50" Content="庫存" Click="InventoryButton_Click" />
-        <Button Grid.Row="2" Grid.Column="1" FontSize="50" Content="開單" />
-        <Button Grid.Row="3" Grid.Column="0" FontSize="50" Content="客戶" />
-        <Button Grid.Row="3" Grid.Column="1" FontSize="50" Content="離開" />
+        <!-- 第二列 -->
+        <Button Grid.Row="2" Grid.Column="0" Content="客戶" Style="{StaticResource RoundedButtonStyle}" />
+        <!-- 庫存、銷貨、離開按鈕已合併，這裡不用再放 -->
     </Grid>
 </Window>

@@ -15,81 +15,34 @@
         <!-- 查詢區域 -->
         <Grid  Margin="10">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <!-- 查詢條件區自動高度 -->
                 <RowDefinition Height="*" />
-                <!-- 資料顯示區填滿剩餘空間 -->
-                <RowDefinition Height="Auto" />
-                <!-- 分頁區自動高度 -->
+                <RowDefinition Height="15*" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
 
             <Grid Grid.Row="0" Margin="3">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="120" />
-                    <ColumnDefinition Width="120" />
-                    <ColumnDefinition Width="120" />
-                    <ColumnDefinition Width="250" />
-                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <!-- 廠商下拉選單 -->
-                <ComboBox x:Name="SearchSupplierComboBox"
-              Grid.Column="0"
-              Margin="3"
-              Height="30"
-              FontSize="14"
-              VerticalContentAlignment="Center"
-              VerticalAlignment="Center"
-              ItemsSource="{Binding SupplierList}"
-              DisplayMemberPath="DisplayValueName"
-              SelectedValuePath="BarCode" />
-                <!-- 產品類別下拉選單 -->
-                <ComboBox x:Name="SearchCategoryComboBox"
-              Grid.Column="1"
-              Margin="3"
-              Height="30"
-              FontSize="14"
-              VerticalContentAlignment="Center"
-              VerticalAlignment="Center"
-              ItemsSource="{Binding CategoryList}"
-              DisplayMemberPath="DisplayValueName"
-              SelectedValuePath="Value" />
-                <!-- 產品名稱/條碼下拉選單 -->
-                <ComboBox x:Name="SearchProductComboBox"
-              Grid.Column="2"
-              Margin="3"
-              Height="30"
-              FontSize="14"
-              VerticalContentAlignment="Center"
-              VerticalAlignment="Center"
-              ItemsSource="{Binding ProductList}"
-              DisplayMemberPath="DisplayValueName"
-              SelectedValuePath="BarCode" />
-                <!-- 查詢欄位 -->
-                <TextBox x:Name="SearchTextBox"
-             Grid.Column="3"
-             Margin="3"
-             Height="30"
-             FontSize="14"
-             VerticalContentAlignment="Center"
-             VerticalAlignment="Center" />
-                <!-- 查詢按鈕 -->
-                <Button Content="查詢"
-            Grid.Column="4"
-            Margin="3"
-            Width="70"
-            Height="30"
-            FontSize="14"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Right"/>
+                <StackPanel Grid.Column="0" >
+                    <ComboBox x:Name="SearchCategoryComboBox" Margin="3" Height="30" FontSize="20" VerticalContentAlignment="Center" ItemsSource="{Binding CategoryList}" DisplayMemberPath="DisplayValueName" SelectedValuePath="Value" />
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <TextBox x:Name="SearchTextBox" Margin="3" Height="30" FontSize="20" VerticalContentAlignment="Center" Grid.Column="1" />
+                </StackPanel>
+                <StackPanel Grid.Column="2">
+                    <Button Content="查詢" Margin="3" Width="70" Height="30"  Grid.Column="2" />
+                </StackPanel>                
             </Grid>
 
-
-            <!-- 左邊的 DataGrid -->
+           <!-- 左邊的 DataGrid -->
             <Grid Grid.Row="1" Margin="3">
                 <StackPanel >
                     <ScrollViewer VerticalScrollBarVisibility="Auto">
-                        <syncfusion:SfDataGrid x:Name="InventoryDataGrid" AutoGenerateColumns="False" Grid.Row="1" Grid.Column="0"  ItemsSource="{Binding ElementName=dataPager, Path=PagedSource}" RowHeight="28">
+                        <syncfusion:SfDataGrid x:Name="InventoryDataGrid" AutoGenerateColumns="False" Grid.Row="1" Grid.Column="0" Margin="10" ItemsSource="{Binding ElementName=dataPager, Path=PagedSource}" RowHeight="28">
                             <syncfusion:SfDataGrid.Columns>
                                 <syncfusion:GridTextColumn HeaderText="商品名稱" MappingName="Name" />
                                 <syncfusion:GridTextColumn HeaderText="數量" MappingName="Code" />
@@ -171,12 +124,12 @@
                 </StackPanel>
             </Grid>
 
-            <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5" Grid.Row="9">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5" Grid.Row="9">
                 <Button Content="新增" Margin="5" Width="72" Height="50" />
                 <Button Content="編輯" Margin="5" Width="72" Height="50" />
                 <Button Content="複製" Margin="5" Width="72" Height="50" />
                 <Button Content="關閉" Margin="5" Width="72" Height="50" />
-            </StackPanel>-->
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>

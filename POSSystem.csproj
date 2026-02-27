@@ -42,7 +42,7 @@
       <HintPath>packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Data.WPF, Version=29.1462.37.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>packages\Syncfusion.Data.WPF.29.1.37\lib\net462\Syncfusion.Data.WPF.dll</HintPath>
@@ -85,6 +85,9 @@
       <DependentUpon>EmployeeRegisterWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helper\Converter.cs" />
+    <Compile Include="Product.xaml.cs">
+      <DependentUpon>Product.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Inventory.xaml.cs">
       <DependentUpon>Inventory.xaml</DependentUpon>
     </Compile>
@@ -106,6 +109,10 @@
     <Page Include="EmployeeRegisterWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Product.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Inventory.xaml">
       <SubType>Designer</SubType>
