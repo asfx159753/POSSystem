@@ -25,11 +25,27 @@ namespace POSSystem
             InitializeComponent();
         }
 
-        private void InventoryButton_Click(object sender, RoutedEventArgs e)
+        private void InventorysButton_Click(object sender, RoutedEventArgs e)
         {
             InventoryWindow inventoryWindow = new InventoryWindow();
             inventoryWindow.Owner = this; // 設置擁有者
             inventoryWindow.ShowDialog(); // 以模態方式顯示視窗
         }
+
+        private void SuppliersButton_Click(object sender, RoutedEventArgs e)
+        {
+            InventoryWindow inventoryWindow = new InventoryWindow();
+            inventoryWindow.Owner = this; // 設置擁有者
+            inventoryWindow.ShowDialog(); // 以模態方式顯示視窗
+        }
+
+        private void CustomersButton_Click(object sender, RoutedEventArgs e)
+        {
+            InventoryWindow inventoryWindow = new InventoryWindow();
+            inventoryWindow.Owner = this; // 設置擁有者
+            inventoryWindow.ShowDialog(); // 以模態方式顯示視窗
+        }
+
+       
     }
 }
