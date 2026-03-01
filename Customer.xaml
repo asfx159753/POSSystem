@@ -1,0 +1,70 @@
+﻿<Window x:Class="POSSystem.CustomerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        Title="Customer" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!-- 上層區域 -->
+        <Grid Grid.Row="0" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <!-- 左區域：上傳檔案與導入按鈕 -->
+            <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,20,0">
+                <TextBlock Text="選擇檔案：" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <Button x:Name="UploadButton" Content="上傳檔案" Width="100" Height="30" Margin="0,0,10,0"/>
+                <Button x:Name="ImportButton" Content="匯入" Width="80" Height="30"/>
+            </StackPanel>
+            <!-- 右區域：查詢欄 -->
+            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBlock Text="查詢：" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <TextBox x:Name="SearchTextBox" Width="200" Height="30" Margin="0,0,10,0"/>
+                <Button x:Name="SearchButton" Content="查詢" Width="80" Height="30"/>
+            </StackPanel>
+        </Grid>
+        <!-- 下層區域：客戶列表 -->
+        <Grid Grid.Row="1" Margin="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <syncfusion:SfDataGrid
+                        x:Name="CustomerDataGrid"
+                        AutoGenerateColumns="False"
+                        ItemsSource="{Binding CustomerList}"
+                        RowHeight="28"
+                        Margin="10">
+                        <syncfusion:SfDataGrid.Columns>
+                            <syncfusion:GridTextColumn HeaderText="客戶名稱" MappingName="Name"/>
+                            <syncfusion:GridTextColumn HeaderText="電話" MappingName="Phone"/>
+                            <syncfusion:GridTextColumn HeaderText="地址" MappingName="Address"/>
+                            <syncfusion:GridTextColumn HeaderText="Email" MappingName="Email"/>
+                        </syncfusion:SfDataGrid.Columns>
+                    </syncfusion:SfDataGrid>
+                </ScrollViewer>
+            </StackPanel>
+            <Grid Grid.Row="1" VerticalAlignment="Bottom">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <syncfusion:SfDataPager
+                    x:Name="dataPager"
+                    Grid.Column="1"
+                    PageSize="20"
+                    Source="{Binding CustomerList}"
+                    NumericButtonCount="5"
+                    DisplayMode="FirstLastPreviousNextNumeric"
+                    Margin="0,10,0,0"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

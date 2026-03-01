@@ -41,9 +41,9 @@ namespace POSSystem
 
         private void CustomersButton_Click(object sender, RoutedEventArgs e)
         {
-            InventoryWindow inventoryWindow = new InventoryWindow();
-            inventoryWindow.Owner = this; // 設置擁有者
-            inventoryWindow.ShowDialog(); // 以模態方式顯示視窗
+            CustomerWindow customerWindow = new CustomerWindow();
+            customerWindow.Owner = this; // 設置擁有者
+            customerWindow.ShowDialog(); // 以模態方式顯示視窗
         }
 
        
